@@ -1,0 +1,1 @@
+To run this script use python dupFinder.py /folder1 ./folder2
