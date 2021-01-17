@@ -1,0 +1,10 @@
+Check for folder /home/javiermg/Documentos/pyProjects/folder1
+Scanning /home/javiermg/Documentos/pyProjects/folder1...
+Check for folder /home/javiermg/Documentos/pyProjects/folder2
+Scanning /home/javiermg/Documentos/pyProjects/folder2...
+Duplicates Found:
+The following files are identical. The name could differ, but the content is identical
+___________________
+		/home/javiermg/Documentos/pyProjects/folder1/test1
+		/home/javiermg/Documentos/pyProjects/folder2/test1
+___________________
