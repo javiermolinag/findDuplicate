@@ -56,6 +56,7 @@ def printResults(dict1):
  
  
 if __name__ == '__main__':
+    sys.stdout = open('../../../log/output.stdout', 'w')
     if len(sys.argv) > 1:
         dups = {}
         folders = sys.argv[1:]
