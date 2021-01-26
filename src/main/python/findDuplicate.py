@@ -6,7 +6,7 @@ def findDup(parentFolder):
     # Dups in format {hash:[names]}
     dups = {}
     for dirName, subdirs, fileList in os.walk(parentFolder):
-        print('Scanning %s...' % dirName)
+        print('Scanning %s...' % dirName, flush=True)
         for filename in fileList:
             # Get the path to the file
             path = os.path.join(dirName, filename)
@@ -43,16 +43,16 @@ def hashfile(path, blocksize = 65536):
 def printResults(dict1):
     results = list(filter(lambda x: len(x) > 1, dict1.values()))
     if len(results) > 0:
-        print('Duplicates Found:')
-        print('The following files are identical. The name could differ, but the content is identical')
-        print('___________________')
+        print('Duplicates Found:', flush=True)
+        print('The following files are identical. The name could differ, but the content is identical', flush=True)
+        print('___________________', flush=True)
         for result in results:
             for subresult in result:
                 print('\t\t%s' % subresult)
-            print('___________________')
+            print('___________________', flush=True)
  
     else:
-        print('No duplicate files found.')
+        print('No duplicate files found.', flush=True)
  
  
 if __name__ == '__main__':
@@ -61,14 +61,14 @@ if __name__ == '__main__':
         dups = {}
         folders = sys.argv[1:]
         for i in folders:
-            print("Check for folder", i)
+            print("Check for folder", i, flush=True)
             # Iterate the folders given
             if os.path.exists(i):
                 # Find the duplicated files and append them to the dups
                 joinDicts(dups, findDup(i))
             else:
-                print('%s is not a valid path, please verify' % i)
+                print('%s is not a valid path, please verify' % i, flush=True)
                 sys.exit()
         printResults(dups)
     else:
-        print('Usage: python dupFinder.py folder OR \n python dupFinder.py folder1 folder2 folder3')
+        print('Usage: python dupFinder.py folder OR \n python dupFinder.py folder1 folder2 folder3', flush=True)
